@@ -32,6 +32,15 @@ def main():
         if path == "/index.html":
             # Send the HTTP 200 OK response
             response = "HTTP/1.1 200 OK\r\n\r\n"
+        elif path.startswith("/echo/"):
+            # Extract string after "/echo/"
+            echo_string = path[len("/echo/"):]
+            response = (
+                f"HTTP/1.1 200 OK\r\n"
+                f"Content-Type: text/plain\r\n"
+                f"Content-Length: {len(echo_string)}\r\n\r\n"
+                f"{echo_string}"
+            )
         else:
             # Respond with 404 Not Found
             response = "HTTP/1.1 404 Not Found\r\n\r\nThe requested resource was not found."
