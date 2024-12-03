@@ -5,9 +5,7 @@ import argparse
 
 
 def handle_client(client_socket, directory):
-    """Handles a single client connection."""
     try:
-        
         
         # Receive data from the client socket => get client request
         client_request = client_socket.recv(1024).decode()  # Decode to get string data from bytes
