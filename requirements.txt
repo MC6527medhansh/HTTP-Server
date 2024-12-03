@@ -1,0 +1,2 @@
+pyparsing~=3.0
+lark~=1.1
